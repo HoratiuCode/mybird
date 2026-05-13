@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MyBird</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="app-shell" aria-label="MyBird keyword search dashboard">
+      <header class="app-header">
+        <div class="brand-mark" aria-hidden="true">M</div>
+        <div>
+          <h1>MyBird</h1>
+          <p>Track live posts by keyword</p>
+        </div>
+      </header>
+
+      <form class="keyword-form" id="keywordForm" autocomplete="off">
+        <label class="sr-only" for="keywordInput">Add keyword</label>
+        <input id="keywordInput" type="text" placeholder="Add keyword" maxlength="80">
+        <button type="submit">Add</button>
+      </form>
+
+      <p class="status" id="statusMessage" role="status" aria-live="polite"></p>
+
+      <section class="toolbar" aria-label="Keyword actions">
+        <span id="keywordCount">0 keywords</span>
+        <button class="ghost-button" id="searchAllButton" type="button" disabled>Search all</button>
+      </section>
+
+      <section class="keyword-panel" aria-label="Saved keywords">
+        <ul class="keyword-list" id="keywordList"></ul>
+        <div class="empty-state" id="emptyState">
+          <strong>No keywords yet</strong>
+          <span>Add one to start searching live X posts.</span>
+        </div>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
